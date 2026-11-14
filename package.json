@@ -1,0 +1,12 @@
+{
+  "name": "fetchframe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local video downloader with a web interface, built on yt-dlp and ffmpeg.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

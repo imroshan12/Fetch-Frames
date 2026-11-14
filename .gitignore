@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# Website
+node_modules/
+npm-debug.log*
+*.log
+
+# Python (yt-dlp bytecode, created on first run)
+__pycache__/
+*.pyc
+
+# Downloaded by ios/scripts/setup-vendor.sh: the iOS frameworks are too large for Git,
+# and yt-dlp is third-party code that changes often.
+ios/vendor/
+ios/FetchFrame/Python/app_packages/*
+!ios/FetchFrame/Python/app_packages/README.md
+
+# Xcode
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.ipa
+*.dSYM.zip
+*.dSYM/
+
+# Editors and local tools
+.vscode/
+.idea/
+.claude/
+
+# Secrets
+.env
+.env.*

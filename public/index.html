@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>FetchFrame</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <p class="wordmark">FetchFrame</p>
+
+      <header class="hero">
+        <h1>Paste a link.<br />Keep the video.</h1>
+        <p class="lede">
+          YouTube, Shorts, Instagram Reels, TikTok, X, Facebook, Vimeo and well over a thousand other sites.
+          Pick the exact quality you want, from 144p to 4K.
+        </p>
+      </header>
+
+      <form id="fetch-form" class="fetch" novalidate>
+        <label class="visually-hidden" for="url">Video link</label>
+        <input
+          id="url"
+          name="url"
+          type="url"
+          inputmode="url"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="https://youtube.com/shorts/…"
+          autofocus
+        />
+        <button id="paste" class="ghost" type="button">Paste</button>
+        <button id="fetch" class="primary" type="submit">Find video</button>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+      <section id="loading" class="result skeleton" aria-hidden="true" hidden>
+        <div class="skeleton-thumb"></div>
+        <div class="skeleton-lines"><span></span><span></span><span></span></div>
+      </section>
+
+      <section id="result" class="result" hidden>
+        <div class="summary">
+          <img id="thumbnail" class="thumbnail" alt="" referrerpolicy="no-referrer" hidden />
+          <div class="summary-text">
+            <p id="source" class="eyebrow"></p>
+            <h2 id="title"></h2>
+            <p id="meta" class="meta"></p>
+            <p id="note" class="note" hidden></p>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <h3>Video</h3>
+          <div id="container-switch" class="switch" role="radiogroup" aria-label="File format" hidden>
+            <button type="button" role="radio" data-container="mp4" aria-checked="true">MP4</button>
+            <button type="button" role="radio" data-container="webm" aria-checked="false">WebM</button>
+          </div>
+        </div>
+        <ul id="video-options" class="options"></ul>
+        <p id="no-video" class="empty" hidden>No video streams at this link. Audio is below.</p>
+
+        <div id="audio-section" hidden>
+          <div class="section-head"><h3>Audio only</h3></div>
+          <ul id="audio-options" class="options"></ul>
+        </div>
+      </section>
+
+      <footer class="footer">
+        Runs on your computer. Files are removed from temporary storage an hour after they finish.
+        Only save videos you have the right to keep.
+      </footer>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
